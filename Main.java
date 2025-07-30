@@ -19,6 +19,7 @@ public class Main {
                 4. Inversão de string
                 5. Sequência F
                 6. Sequência de Ackermann
+                7. Somatório e multiplicatório de vetores
                 0. Encerrar""");
     }
 
@@ -82,6 +83,21 @@ public class Main {
                 int b = sc.nextInt();
                 int result = Lib.ackermann(a,b);
                 System.out.printf("A(%d, %d) = %d\n", a, b, result);
+                break;
+            }
+
+            case (7) : { // Somatório e multiplicatório de vetores
+                System.out.print("Forneça o tamanho do vetor:\n> ");
+                int size = sc.nextInt();
+                int[] arr = new int[size];
+                for (int i = 0; i < size; i++) {
+                    System.out.print("Forneça um número (" + (i+1) + "/" + size + "):\n> ");
+                    int n = sc.nextInt();
+                    arr[i] = n;
+                }
+                int sum = Lib.sumArray(arr);
+                int mul = Lib.multArray(arr);
+                System.out.printf("Somatório = %d, Multiplicatório = %d\n", sum, mul);
                 break;
             }
             

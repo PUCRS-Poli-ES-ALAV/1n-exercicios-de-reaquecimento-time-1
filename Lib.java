@@ -38,4 +38,22 @@ public class Lib {
         if (n == 0) return ackermann(m - 1, 1); // A(m,n) = A(m-1, 1) se m != 0 e n = 0
         return ackermann(m-1, ackermann(m, n-1)); // A(m,n) = A(m-1, A(m,n-1)) se m != 0 e n != 0
     }
+
+    public static int sumArray (int[] arr) {
+        return somatorio(arr, 0);
+    }
+
+    private static int somatorio (int[] arr, int i) {
+        if (i >= arr.length) return 0;
+        return arr[i] + somatorio (arr, i+1);
+    }
+
+    public static int multArray (int[] arr) {
+        return multiplicatorio(arr, 0);
+    }
+
+    private static int multiplicatorio (int[] arr, int i) {
+        if (i >= arr.length) return 1;
+        return arr[i] * multiplicatorio(arr, i+1);
+    }
 }
