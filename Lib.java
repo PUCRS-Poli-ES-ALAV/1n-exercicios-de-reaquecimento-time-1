@@ -22,5 +22,18 @@ public class Lib {
         return (1/n) + fractionalSum(n-1);
     }
 
-    
+    public static String invertString (String s) {
+        if (s.length() <= 0) return "";
+        return s.charAt(s.length() - 1) + (invertString(s.substring(0, s.length()-1)));
+    }
+
+    public static int weirdSequence (int n) {
+        if (n == 1) return 1;
+        if (n == 2) return 2;
+        return 2 * (weirdSequence(n-1)+3) * weirdSequence(n-2);
+    }
+
+    public static int ackermann(int n, int m) {
+        return 0;
+    }
 }

@@ -16,7 +16,9 @@ public class Main {
                 1. Multiplicar
                 2. Somar
                 3. Fracionais
-                4. 
+                4. Inversão de string
+                5. Sequência F
+                6. Sequência de Ackermann
                 0. Encerrar""");
     }
 
@@ -31,7 +33,7 @@ public class Main {
             case (1) : { // Multiplicar
                 System.out.print("Forneca o primeiro número:\n> ");
                 int a = sc.nextInt();
-                System.out.println("Forneça o segundo número:\n> ");
+                System.out.print("Forneça o segundo número:\n> ");
                 int b = sc.nextInt();
                 int result = Lib.multiply(a, b);
                 System.out.printf("%d * %d = %d\n", a, b, result);
@@ -41,7 +43,7 @@ public class Main {
             case (2) : { // Somar
                 System.out.print("Forneca o primeiro número:\n> ");
                 int a = sc.nextInt();
-                System.out.println("Forneça o segundo número:\n> ");
+                System.out.print("Forneça o segundo número:\n> ");
                 int b = sc.nextInt();
                 int result = Lib.sum(a, b);
                 System.out.printf("%d + %d = %d\n", a, b, result);
@@ -56,10 +58,32 @@ public class Main {
                 break;
             }
 
-            case (4) : { //
+            case (4) : { // Inversão de string
+                System.out.print("Forneça uma string:\n> ");
+                sc.nextLine();
+                String s = sc.nextLine();
+                String result = Lib.invertString(s);
+                System.out.println(s + " -> " + result);
                 break;
             }
 
+            case (5) : { // Sequência F
+                System.out.print("Forneça um número:\n> ");
+                int a = sc.nextInt();
+                int result = Lib.weirdSequence(a);
+                System.out.printf("F(%d) = %d\n", a, result);
+                break;
+            }
+
+            case (6) : { // Sequência de Ackermann
+                System.out.print("Forneca o primeiro número:\n> ");
+                int a = sc.nextInt();
+                System.out.print("Forneça o segundo número:\n> ");
+                int b = sc.nextInt();
+                int result = Lib.ackermann(a,b);
+                System.out.printf("A(%d, %d) = %d\n", a, b, result);
+            }
+            
             default : {
                 System.out.println("Opção inválida.");
                 break;
