@@ -33,7 +33,9 @@ public class Lib {
         return 2 * (weirdSequence(n-1)+3) * weirdSequence(n-2);
     }
 
-    public static int ackermann(int n, int m) {
-        return 0;
+    public static int ackermann(int m, int n) {
+        if (m == 0) return n + 1;                 // A(m,n) = n + 1 se m = 0
+        if (n == 0) return ackermann(m - 1, 1); // A(m,n) = A(m-1, 1) se m != 0 e n = 0
+        return ackermann(m-1, ackermann(m, n-1)); // A(m,n) = A(m-1, A(m,n-1)) se m != 0 e n != 0
     }
 }

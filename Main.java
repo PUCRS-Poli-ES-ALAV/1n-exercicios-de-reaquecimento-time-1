@@ -82,6 +82,7 @@ public class Main {
                 int b = sc.nextInt();
                 int result = Lib.ackermann(a,b);
                 System.out.printf("A(%d, %d) = %d\n", a, b, result);
+                break;
             }
             
             default : {
