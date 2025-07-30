@@ -20,6 +20,7 @@ public class Main {
                 5. Sequência F
                 6. Sequência de Ackermann
                 7. Somatório e multiplicatório de vetores
+                8. Verificador de palíndromo
                 0. Encerrar""");
     }
 
@@ -98,6 +99,15 @@ public class Main {
                 int sum = Lib.sumArray(arr);
                 int mul = Lib.multArray(arr);
                 System.out.printf("Somatório = %d, Multiplicatório = %d\n", sum, mul);
+                break;
+            }
+
+            case (8) : { // Verificador de palíndromo
+                System.out.print("Forneça uma string:\n> ");
+                sc.nextLine();
+                String s = sc.nextLine();
+                boolean result = Lib.palindrome(s);
+                System.out.printf("%s é palíndromo? %b\n", s, result);
                 break;
             }
             

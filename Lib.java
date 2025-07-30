@@ -56,4 +56,13 @@ public class Lib {
         if (i >= arr.length) return 1;
         return arr[i] * multiplicatorio(arr, i+1);
     }
+
+    public static boolean palindrome (String s) {
+        return verifier(s, 0);
+    }
+
+    private static boolean verifier (String s, int n) {
+        if (n >= s.length()/2) return true;
+        return s.charAt(n) == s.charAt(s.length()-1-n) && verifier(s.substring(n+1, s.length()-1-(n+1)), n+1);
+    }
 }
