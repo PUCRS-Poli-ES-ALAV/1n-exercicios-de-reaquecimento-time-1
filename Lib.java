@@ -58,11 +58,20 @@ public class Lib {
     }
 
     public static boolean palindrome (String s) {
-        return verifier(s, 0);
+        if (s.length() <= 1) return true;
+        char first = s.charAt(0);
+        char last = s.charAt(s.length()-1);
+        if (first != last) return false;
+        return palindrome (s.substring(1, s.length()-1));
     }
 
     private static boolean verifier (String s, int n) {
         if (n >= s.length()/2) return true;
-        return s.charAt(n) == s.charAt(s.length()-1-n) && verifier(s.substring(n+1, s.length()-1-(n+1)), n+1);
+        char first = s.charAt(n);
+        char second = s.charAt(s.length()-1-n);
+        boolean areEquals = first == second;
+        n++;
+        boolean verify = verifier(s.substring(n, s.length()-1-(n)), n);
+        return areEquals && verify;
     }
 }
